@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105184349) do
+ActiveRecord::Schema.define(version: 20151105184434) do
+
+  create_table "deathmatches", force: :cascade do |t|
+    t.string   "name"
+    t.string   "modality"
+    t.integer  "competitors"
+    t.string   "type_competitors"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

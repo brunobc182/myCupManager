@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Deathmatches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Modality</th>
+      <th>Competitors</th>
+      <th>Type competitors</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deathmatches.each do |deathmatch| %>
+      <tr>
+        <td><%= deathmatch.name %></td>
+        <td><%= deathmatch.modality %></td>
+        <td><%= deathmatch.competitors %></td>
+        <td><%= deathmatch.type_competitors %></td>
+        <td><%= link_to 'Show', deathmatch %></td>
+        <td><%= link_to 'Edit', edit_deathmatch_path(deathmatch) %></td>
+        <td><%= link_to 'Destroy', deathmatch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deathmatch', new_deathmatch_path %>

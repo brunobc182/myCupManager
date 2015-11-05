@@ -1,0 +1,33 @@
+<%= form_for(@deathmatch) do |f| %>
+  <% if @deathmatch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deathmatch.errors.count, "error") %> prohibited this deathmatch from being saved:</h2>
+
+      <ul>
+      <% @deathmatch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :modality %><br>
+    <%= select("deathmatch", "modality", ['Pontos corridos', 'Grupos'], {include_blank: "Selecione"}) %>
+  </div>
+  <div class="field">
+    <%= f.label :competitors %><br>
+    <%= f.number_field :competitors %>
+  </div>
+  <div class="field">
+    <%= f.label :type_competitors %><br>
+    <%= select("deathmatch", "type_competitors", ['Real', 'Virtual'], {include_blank: "Selecione"}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
