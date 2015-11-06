@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'devise-i18n-views', github: 'mcasimir/devise-i18n-views', branch: :master
+gem 'devise-i18n', '~> 0.12.1'
 ruby '2.2.1'
 gem 'rails', '4.2.4'
 gem 'sqlite3'
